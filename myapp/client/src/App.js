@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Styles/App.css';
 import HeaderImg from './Components/Header'
 import Home from './Components/Home'
-import Logo from './Images/icon.png'
+import Logo from './Images/OSNY-Logov2.svg'
 
 class App extends Component {
 
