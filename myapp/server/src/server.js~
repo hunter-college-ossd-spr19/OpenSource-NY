@@ -10,11 +10,11 @@ var app = express();
 const port = 5000;
 const response = require('./response.js');
 const handleListen = require('./handleListen.js');
-//https://github.com/expressjs/cors
-app.use(cors());
 
-app.use(bodyParser.json({limit: '100mb'}));
-app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
+app.use(cors());//Future proofing as chrome/website use cors to authenticate requests
+
+app.use(bodyParser.json({limit: '100mb'})); //Utilizied to increase json transfer limit (jsons may get large based on repo's)
+app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));//Same as previous reason
 
 
 
