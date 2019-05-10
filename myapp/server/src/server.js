@@ -10,11 +10,11 @@ var app = express();
 const port = 5000;
 const response = require('./response.js');
 const handleListen = require('./handleListen.js');
-//https://github.com/expressjs/cors
+
+app.use(cors());
 
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
-app.use(cors());
 
 
 
@@ -30,8 +30,8 @@ client.connect(err => {
 });
 
 app.listen( port, handleListen(console.log, port) );      
-  app.get('/', response.hello);
-  app.get( '/express_backend', response.express_backend);
+  //app.get('/', response.hello);
+  //app.get( '/express_backend', response.express_backend);
 
 
 // Our API and their approtiate functions
